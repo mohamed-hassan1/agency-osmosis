@@ -1,0 +1,1616 @@
+/*** Imports Files ***/
+
+@import '_variables.sass'
+@import '_mixin.sass'
+
+
+/*** Body ***/
+   
+body
+   font-family: $regFont
+   font-size: $bodyFontSize
+   color: $txtColor
+   overflow: hidden
+   &.ready
+      overflow: inherit
+
+
+/*** Global ***/
+
+h1, h2, h3, h4, h5, h6, .title
+   color: $headingColor
+   font-family: $boldFont
+h3
+   margin-bottom: $mdSpace
+   font-size: $h3Size
+h1
+   font-size: $h1Size
+   margin-bottom: $bgSpace
+.btn
+   font-family: $medFont
+   font-size: $bodyFontSize
+   color: $lightTxtColor
+   background-color: $highlightColor
+   border-radius: 5px
+   padding: 10px 25px
+   box-shadow: 0 3px 18px 0px rgba(0,0,0,.18)
+   transition: $tran
+   &:hover
+      color: $lightTxtColor
+      background-color: $highlightColor2
+.left-content
+   .content
+      padding-right: 50px
+.right-content
+   .content
+      padding-left: 50px
+strong
+   font-family: $boldFont
+section
+   position: relative
+   padding-top: $ultraSpace
+p
+   font-size: $bodyFontSize
+   margin-bottom: $smSpace
+p + .title
+   margin-top: $bgSpace
+.num, a
+   font-size: $bodyFontSize
+
+.floating-social-icons
+   width: calc(100% - 1310px)
+   color: $lightTxtColor
+   z-index: 2
+   a
+      color: $lightTxtColor
+      font-size: 14px
+      line-height: 0px
+   .social-icons
+      margin-bottom: 90px
+      .icon-item
+         a
+            width: 35px
+            height: 35px
+            padding-top: 1px
+            border-radius: 100%
+            border: 2px solid rgba(255,255,255,0.3)
+            margin: 0 auto 10px auto
+            text-decoration: none
+            transition: $tran
+            &:hover
+               background-color: rgba(255,255,255,0.17)
+   .scroll-txt
+      .txt
+         @include perfix(transform, rotate(-90deg))
+         letter-spacing: 2px
+         white-space: nowrap
+         font-size: 14px
+         margin-left: 4px
+      .arrow
+         font-size: 19px
+         top: 80px
+         left: 1px
+%full-fixed
+   position: fixed
+   width: 100%
+   height: 100%
+   top: 0
+   left: 0
+   bottom: 0
+   right: 0
+   z-index: 999999
+
+@media only screen and (min-width: 1520px)
+   .floating-social-icons
+      left: -3%
+
+@media only screen and (min-width: 1700px)
+   .floating-social-icons
+      left: -7%
+
+@media only screen and (max-width: 1400px)
+   .floating-social-icons
+      width: calc(100% - 1200px)
+      left: -0.5%
+
+@media only screen and (max-width: 1300px)
+   .left-content .content
+      padding-right: 0px
+      padding-left: 50px
+   .floating-social-icons
+      width: calc(100% - 1100px)
+      left: -0.5%
+
+@media only screen and (max-width: 1199px)
+   h1
+      font-size: $h1SizeMd
+      margin-bottom: $mdSpace
+   h3
+      font-size: $h3SizeMd
+   p, a, .btn, .num
+      font-size: $bodyFontSizeMd
+   .floating-social-icons
+      width: calc(100% - 1015px)
+   section
+      padding-top: $ultraSpaceMd
+
+@media only screen and (max-width: 1120px)
+   .floating-social-icons
+      width: calc(100% - 913px)
+
+@media only screen and (max-width: 991px)
+   .right-content .content
+      padding-left: 25px
+   .left-content .content
+      padding-left: 0px
+   section
+      padding-top: $ultraSpaceSm
+   .floating-social-icons
+      width: calc(100% - 830px)
+   
+@media only screen and (max-width: 915px)
+   .floating-social-icons
+      width: calc(100% - 770px)
+
+@media only screen and (max-width: 850px)
+   .floating-social-icons
+      width: calc(100% - 688px)
+   .left-content .content
+      padding-left: 35px
+
+@media only screen and (max-width: 767px)
+   .left-content .content, .right-content .content
+      padding-left: 0px
+   section
+      padding-left: 10px
+      padding-right: 10px
+      padding-top: $ultraSpaceXsm
+   p + .title
+      margin-top: 20px
+   .copy-social-icons
+      .floating-social-icons
+         display: none
+   header
+      padding-left: 10px
+      padding-right: 10px
+   
+@media only screen and (max-width: 500px)
+   h1
+      font-size: $h1SizeXsm
+      line-height: 47px
+   h3
+      font-size: $h3SizeXsm
+   p, a, .btn, .num
+      font-size: $bodyFontSizeXsm
+
+
+/*** Navbar ***/
+
+nav
+   &.position-absolute
+      top: 15px!important
+      z-index: 1
+   .container
+      padding-left: 15px!important
+      padding-right: 15px!important
+   a
+      color: $lightTxtColor
+   &.navbar 
+      .navbar-collapse
+         padding-top: 15px
+      .container
+         align-items: flex-start
+   .navbar-brand
+      font-family: $boldFont
+      font-size: $logoSize
+      width: 150px
+      &:hover
+         color: $lightTxtColor
+   .navbar-nav
+      .nav-item
+         &:not(:last-child)
+            margin-right: 15px
+         .nav-link
+            position: relative
+            padding: .5rem 1rem
+            transition: $tran
+            border-radius: 5px
+            overflow: hidden
+            &::before
+              content: ''
+              position: absolute
+              bottom: 0
+              left: 0
+              width: 100%
+              height: 0
+              background-color: rgba(255,255,255, 0.1)
+              transition: $tran
+            &:hover
+               color: $lightTxtColor
+            &:hover::before
+               height: 100%
+   &.position-fixed
+      top: 0px
+      background-color: $mainColor
+      box-shadow: 0px 2px 15px 0px rgba(0,0,0,.25)
+      z-index: 999
+      &.popup-active
+         z-index: 9
+      .container
+         align-items: center
+      .navbar-collapse
+         padding-top: 0px
+      .navbar-brand
+         width: 100px
+               
+@media only screen and (min-width: 1850px)
+   nav
+      a
+         font-size: $bodyFontSize + 3
+      .navbar-brand
+         font-size: $logoSize + 3
+
+@media only screen and (max-width: 991px)
+   nav
+      .navbar-brand
+         width: 120px
+
+@media only screen and (max-width: 767px)
+   nav.position-absolute
+      top: 0px!important
+      margin-top: 10px
+      .container
+         align-items: center
+   nav
+      padding-left: 10px!important
+      padding-right: 10px!important
+      &.active
+         button.navbar-toggler
+            span:nth-child(1)
+               @include perfix(transform, rotate(-45deg) translate(-6px, 5px))
+            span:nth-child(2)
+               opacity: 0
+            span:nth-child(3)
+               @include perfix(transform, rotate(45deg) translate(-6px, -5px))
+         .navbar-collapse
+            display: block
+            height: 0px
+            overflow: hidden
+      button.navbar-toggler
+         width: 35px
+         padding: 0px
+         outline: none
+         box-shadow: none
+         span
+            display: block
+            background-color: $lightTxtColor
+            height: 2px
+            transition: $tran
+            &:not(:last-child)
+               margin-bottom: 6px
+      .navbar-collapse
+         position: absolute
+         background-color: $mainColor
+         width: 100%
+         left: 0
+         top: 94px
+         border-top: 1px solid $lightTxtColor
+         box-shadow: 0px 4px 11px 0px rgba(0,0,0,0.23)
+         &.getheight
+            display: block
+            opacity: 0
+      .navbar-nav
+         max-width: 540px
+         padding: 5px 15px 0 15px
+         margin: 0 auto
+         .nav-item
+            margin-right: 0px!important
+            margin-bottom: 5px
+            .nav-link
+               padding: 0.6rem 10px
+               &:hover
+                  padding-left: 15px
+      .social-icons
+         display: flex
+         justify-content: center
+         padding: 0.5rem 25px
+         max-width: 540px
+         margin: 0 auto
+         .icon-item
+            a:hover
+               color: $lightTxtColor
+            &:not(:last-child)
+               margin-right: 35px
+   nav.navbar.position-fixed
+      .navbar-collapse
+         top: 82px
+
+@media only screen and (min-width: 768px)
+   nav.navbar
+      .navbar-collapse
+         height: inherit!important
+
+
+/*** Header ***/
+
+.header-section
+   color: $lightTxtColor
+   background-color: $lightMainColor
+   overflow: hidden
+   max-height: 1000px
+   .container
+      padding-top: $bgSpace
+   .floating-shapes
+      svg
+         width: 100%
+         height: auto
+   .txt-content
+      align-items: center
+   h1
+      color: $lightTxtColor
+   #typed-strings
+      display: none
+   p
+      display: inline
+   .description
+      margin-bottom: 35px
+   .pic
+      max-width: 405px
+      padding: 40px 40px 0 0
+      margin-top: 50px
+      &::before
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        width: calc( 100% - 40px )
+        height: calc( 100% - 40px )
+        border: 6px solid $highlightColor 
+      img
+         box-shadow: 15px 15px 50px 0px rgba(0,0,0,0.35)
+
+@media only screen and (max-width: 1199px)
+   .header-section
+      .description
+         margin-bottom: 25px
+      .pic
+         max-width: 350px
+
+@media only screen and (max-width: 991px)
+   .header-section
+      .container
+         padding-top: $lgSpaceMd
+      .pic
+         padding: 30px 30px 0 0
+         &::before
+            width: calc( 100% - 30px )
+            height: calc( 100% - 30px )
+
+@media only screen and (max-width: 767px)
+   .header-section
+      min-height: initial!important
+      height: initial!important
+      text-align: center
+      .floating-social-icons
+         display: none
+      .container
+         padding-top: 140px
+      .left-content, .right-content
+         justify-content: center
+      .pic
+         margin-top: 35px
+         margin-bottom: $ultraSpaceXsm
+      .floating-shapes
+         left: -1%
+         top: 5%
+         svg
+            width: 196%
+
+
+/*** About ***/
+
+.about-section
+   padding-bottom: $ultraSpace
+   overflow-y: hidden
+   .right-content
+      .content
+         padding-top: $mdSpace
+   .floating-social-icons
+      top: 0px
+      color: $mainColor
+      a
+         color: $lightTxtColor
+      .social-icons .icon-item a
+         background-color: $mainColor
+         border: 2px solid $mainColor
+         &:hover
+            background-color: $lightMainColor
+            border-color: $lightMainColor
+
+@media only screen and (max-width: 1199px)
+   .about-section
+      padding-bottom: $ultraSpaceMd
+
+@media only screen and (max-width: 991px)
+   .about-section
+      padding-bottom: $ultraSpaceSm
+
+@media only screen and (max-width: 767px)
+   .about-section
+      padding-bottom: $ultraSpaceXsm
+      .txt-content
+         order: 1
+         margin-bottom: $ultraSpaceXsm * 0.5
+      .pic-content
+         order: 2
+      .right-content
+         .content
+            padding-top: 0px
+
+@media only screen and (max-width: 500px)
+   .about-section
+      .pic
+         max-width: 350px
+         margin: 0 auto
+
+
+/*** For Who Section ***/
+
+.forwho-section
+   padding: $halfSpace 0 $exlgSpace 0
+   background-color: $lightBgColor
+   padding-bottom: $exlgSpace - 25px
+   .top-content
+      margin-bottom: $lgSpace
+   .row
+      z-index: 1
+      justify-content: space-between
+   .box-container
+      flex: 0 0 330px
+      margin-bottom: 25px
+      .box
+         padding: $bgSpace
+         border-radius: 25px
+         background-color: $lightTxtColor
+         box-shadow: 2px 2px 12px 0px rgba(0,0,0,0.08)
+         .icon
+            width: 75px
+            margin-bottom: $mdSpace
+   .float-txt
+      bottom: 0
+      left: 0
+      svg
+         height: auto
+         @include perfix(user-select, none)
+
+@media only screen and (max-width: 1300px)
+   .forwho-section .row
+      padding-left: 50px
+
+@media only screen and (max-width: 1199px)
+   .forwho-section
+      padding-bottom: $exlgSpaceMd - 25px
+
+@media only screen and (max-width: 991px)
+   .forwho-section
+      padding-top: $halfSpaceMd
+      .top-content
+         margin-bottom: $lgSpaceMd - 25px
+      .row
+         padding-left: 0px
+
+@media only screen and (max-width: 850px)
+   .forwho-section
+      .row
+         padding-left: 35px
+
+@media only screen and (max-width: 767px)
+   .forwho-section
+      padding-left: 10px
+      padding-right: 10px
+      padding-bottom: 40px
+      .top-content, .box-container
+         margin-bottom: $ultraSpaceXsm * 0.5
+      .row
+         padding-left: 0px
+         justify-content: center
+
+
+/*** Process Section ***/
+
+.process-section
+   .txt-content .content
+      padding-top: $bgSpace
+   .content
+      & > .description
+         margin-bottom: $bgSpace
+      .process-content
+         margin-bottom: $mdSpace
+      .icon
+         flex: 0 0 39px
+         width: 39px
+         margin-right: 16px
+         svg
+            height: auto
+      .num
+         color: $lightTxtColor
+         font-family: $semiBoldFont
+         z-index: 1
+      .pic
+         padding: 0 40px 40px 0
+         &::before
+            content: ''
+            position: absolute
+            bottom: 0
+            right: 0
+            width: calc( 100% - 40px )
+            height: calc( 100% - 40px )
+            border: 6px solid $highlightColor
+         img
+            box-shadow: 15px 15px 30px 0px rgba(0, 0, 0, 0.13)
+      & > .title
+         margin-bottom: $bgSpace
+
+@media only screen and (max-width: 991px)
+   .process-section
+      .content
+         .pic
+            padding: 0 30px 30px 0
+            &::before
+               width: calc( 100% - 30px )
+               height: calc( 100% - 30px )
+            
+@media only screen and (max-width: 767px)
+   .process-section
+      .right-content
+         order: 1
+         margin-bottom: $ultraSpaceXsm * 0.5
+         .content
+            padding-top: 0px
+      .left-content
+         order: 2
+      .content
+         .pic
+            max-width: 350px
+            margin: 0 auto
+
+
+/*** Services Section ***/
+
+.services-section
+   background-size: cover
+   background-image: $servicesBg
+   background-repeat: no-repeat
+   padding-top: $halfSpace
+   padding-bottom: $halfSpace - 25
+   margin-top: $ultraSpace
+   background-attachment: fixed
+   z-index: 9
+   overflow: hidden
+   .overlay-section
+      top: 0
+      left: 0
+      background-color: $mainColor
+      opacity: 0.85
+   .heading
+      margin-bottom: $lgSpace
+   h3
+      color: $lightTxtColor
+   p.description
+      color: $lightTxtColor
+      max-width: 520px
+      margin: 0 auto
+   .category-container
+      margin-bottom: $lgSpaceMd
+      .category-box
+         .inner-category
+            display: inline-flex
+            border-radius: 35px
+            overflow: hidden
+            background-color: $lightTxtColor
+            box-shadow: 0px 0px 13px 0px rgba(0,0,0,.15)
+            .category
+               padding: 12px 18px
+               z-index: 1
+               &.active
+                  .category-item
+                     .txt
+                        color: $lightTxtColor
+               &:nth-child(1).active
+                  .category-item
+                     .icon.active
+                        background-position: -186px 0px
+               &:nth-child(2).active
+                  .category-item
+                     .icon.active
+                        background-position: -111px 0px
+               &:nth-child(3).active
+                  .category-item
+                     .icon.active
+                        background-position: -37px 0px
+               .category-item
+                  cursor: pointer
+                  .icon
+                     background-size: 224px
+                     background-image: $categoryIcons
+                     width: 37px
+                     height: 35px
+                     background-repeat: no-repeat
+                     background-position: 0px 0px
+                     margin-right: 8px
+                  .txt
+                     font-size: 16px
+                     font-family: $medFont
+                     transition: $tran
+               &:nth-child(1)
+                  .icon
+                     background-position: -148px 0px
+                     height: 31px
+               &:nth-child(2)
+                  .icon
+                     background-position: -74px 0
+                     height: 32px
+      .category-box.category2
+         .inner-category
+            .category
+               .category-item
+                  .icon
+                     background-image: $categoryIcons2
+                     height: 36px
+               &:nth-child(1)
+                  .icon
+                     background-position: 0px 0px
+                     background-size: 147px
+               &:nth-child(2)
+                  .icon
+                     background-position: -72px 0px
+                     background-size: 145px
+               &:nth-child(1).active
+                  .category-item
+                     .icon.active
+                        background-position: -37px 0px
+               &:nth-child(2).active
+                  .category-item
+                     .icon.active
+                        background-position: -109px 0px
+
+   .category-overlay
+      position: absolute
+      width: 100%
+      height: 100%
+      left: 0
+      top: 0
+      background-color: $highlightColor
+      border-radius: 35px
+      z-index: 1
+      transition: all 0.4s ease-in-out
+   .category-list.active
+      .category-box
+         &:not(.active)
+            display: none
+   .category-box
+      animation: fadeIn1 0.25s ease-in-out
+      .box-container
+         &.done-anim
+            transform: none!important
+         .box
+            display: flex
+            align-items: flex-end
+            background-size: cover
+            background-repeat: no-repeat
+            background-position: center center
+            min-height: 375px
+            margin: 0 15px 25px 15px
+            box-shadow: 0px 0px 22px 0px rgba(0,0,0,.25)
+            overflow: hidden
+            .box-content
+               width: 100%
+               .hover-content
+                  display: none
+                  flex-wrap: wrap
+                  overflow: hidden
+               p
+                  color: $lightTxtColor
+                  padding: 0 25px
+                  &.title
+                     font-size: $bgTitle
+                     margin-bottom: $mdSpace
+                     text-align: center
+                     transition: 0.15s ease-in-out
+                     &.active
+                        opacity: 0
+                        animation: fadeOut1 0.2s ease-in-out
+                  &.price
+                     font-family: $medFont
+                     font-size: $bodyFontSizeMd
+                  span
+                     color: $highlightColor
+               .box-btn
+                  float: right
+                  border-radius: 0px
+                  color: $highlightColor
+                  background-color: $lightTxtColor
+                  display: flex
+                  align-items: center
+                  padding: 10px 20px
+                  margin-top: 40px
+                  box-shadow: none
+                  i
+                     margin-left: 8px
+                     font-size: 22px
+                     line-height: 0px
+                     transition: $tran
+                  &:hover i
+                     margin-right: -10px
+            .overlay
+               width: 100%
+               height: 100%
+               top: auto
+               left: 0
+               bottom: 0
+               background: linear-gradient(transparent, $txtColor)
+               animation: heightSlide 0.25s ease-in-out
+            &.active
+               .overlay
+                  opacity: 0.85
+                  background-color: $txtColor
+                  width: 100%
+                  left: 0
+                  right: auto
+                  animation: widthSlide 0.25s ease-in-out
+            &.active2
+               .box-content
+                  p.title
+                     text-align: left
+                     margin-bottom: 20px!important
+                  .hover-content
+                     display: flex
+                     animation: widthSlide 0.25s ease-in-out
+                     .inner-hover
+                        flex: 0 0 340px
+                        width: 340px
+            &.active3
+               .overlay
+                  width: 0%
+                  left: auto
+                  right: 0
+                  animation: widthSlide2 0.25s ease-in-out
+               .box-content
+                  .hover-content
+                     width: 0px
+                     margin-left: auto
+                     justify-content: flex-end
+                     animation: widthSlide2 0.25s ease-in-out
+            &.active4
+               .overlay
+                  height: 0%
+                  width: 100%
+                  animation: heightSlide2 0.25s ease-in-out
+      &:nth-child(1) 
+         .box-container
+            &:nth-child(1)
+               .box, .popup-pic
+                  background-image: $row1Box1Bg
+               .popup-pic
+                  background-position: 0px -11px
+            &:nth-child(2)
+               .box, .popup-pic
+                  background-image: $row1Box2Bg
+               .popup-pic
+                  background-position: 0px -139px
+            &:nth-child(3)
+               .box, .popup-pic
+                  background-image: $row1Box3Bg
+               .popup-pic
+                  background-position: 0px -145px
+      &:nth-child(2)
+         .box-container
+            &:nth-child(1)
+               .box, .popup-pic
+                  background-image: $row2Box1Bg
+            &:nth-child(2)
+               .box, .popup-pic
+                  background-image: $row2Box2Bg
+               .popup-pic
+                  background-position: 0px -11px
+            &:nth-child(3)
+               .box, .popup-pic
+                  background-image: $row2Box3Bg
+               .popup-pic
+                  background-position: 0px -11px
+            &:nth-child(4)
+               .box, .popup-pic
+                  background-image: $row2Box4Bg
+               .popup-pic
+                  background-position: 0px -11px
+            &:nth-child(5)
+               .box, .popup-pic
+                  background-image: $row2Box5Bg
+               .popup-pic
+                  background-position: 0px -11px
+      &:nth-child(3)
+         .box-container
+            &:nth-child(1)
+               .box, .popup-pic
+                  background-image: $row3Box1Bg
+               .popup-pic
+                  background-position: 0px -11px
+            &:nth-child(2)
+               .box, .popup-pic
+                  background-image: $row3Box2Bg
+               .popup-pic
+                  background-position: 0px -11px
+            &:nth-child(3)
+               .box, .popup-pic
+                  background-image: $row3Box3Bg
+               .popup-pic
+                  background-position: 0px -11px
+            &:nth-child(4)
+               .box, .popup-pic
+                  background-image: $row3Box4Bg
+               .popup-pic
+                  background-position: 0px -11px
+            &:nth-child(5)
+               .box, .popup-pic
+                  background-image: $row3Box5Bg
+               .popup-pic
+                  background-position: 0px -11px
+   .category-list.business
+      .category-box
+         &:nth-child(1)
+            .box-container
+               &:nth-child(1)
+                  .box, .popup-pic
+                     background-image: $row1Box1Bg2
+               &:nth-child(2)
+                  .box, .popup-pic
+                     background-image: $row1Box2Bg2
+               &:nth-child(3)
+                  .box, .popup-pic
+                     background-image: $row1Box3Bg2
+               &:nth-child(4)
+                  .box, .popup-pic
+                     background-image: $row1Box4Bg2
+               &:nth-child(5)
+                  .box, .popup-pic
+                     background-image: $row1Box5Bg2
+               &:nth-child(6)
+                  .box, .popup-pic
+                     background-image: $row1Box6Bg2
+               &:nth-child(7)
+                  .box, .popup-pic
+                     background-image: $row1Box7Bg2
+               &:nth-child(8)
+                  .box, .popup-pic
+                     background-image: $row1Box8Bg2
+                  .popup-pic
+                     background-position: 0px -11px
+               &:nth-child(9)
+                  .box, .popup-pic
+                     background-image: $row1Box7Bg2
+         &:nth-child(2)
+            .box-container
+               &:nth-child(1)
+                  .box, .popup-pic
+                     background-image: $row2Box1Bg2
+               &:nth-child(2)
+                  .box, .popup-pic
+                     background-image: $row2Box2Bg2
+               &:nth-child(4)
+                  .box, .popup-pic
+                     background-image: $row2Box4Bg2
+               &:nth-child(5)
+                  .box, .popup-pic
+                     background-image: $row2Box5Bg2
+   .category-list.marketing
+      .category-box
+         &:nth-child(1)
+            .box-container
+               &:nth-child(1)
+                  .box, .popup-pic
+                     background-image: $row1Box1Bg3
+                  .popup-pic
+                     background-position: 0px -60px
+               &:nth-child(2)
+                  .box, .popup-pic
+                     background-image: $row1Box2Bg3
+               &:nth-child(3)
+                  .box, .popup-pic
+                     background-image: $row1Box3Bg3
+               &:nth-child(4)
+                  .box, .popup-pic
+                     background-image: $row1Box4Bg3
+                     
+   .popup-container
+      display: none
+      @extend %full-fixed
+      background-color: $popupOverlayBg
+      .popup-box
+         background-color: $lightTxtColor
+         max-width: 450px
+         width: 100%
+         border-radius: 35px
+         padding-bottom: 25px
+         box-shadow: 0px 3px 15px 0px rgba(0,0,0,.12)
+         .popup-pic
+            background-size: cover
+            background-repeat: no-repeat
+            background-position: center center
+            min-height: 165px
+            margin-bottom: 25px
+            border-radius: 35px 35px 0 0
+         .popup-content
+            padding: 0 25px
+      .close-popup-btn
+         background-color: $lightTxtColor
+         color: $headingColor
+         font-size: 38px
+         top: -16px
+         right: -16px
+         padding: 4.5px 4px 4px 4.5px
+         cursor: pointer
+         box-shadow: 0px 0px 10px 0px rgba(0,0,0,.17)
+      &.active
+         display: flex
+         animation: fadeIn1 0.25s ease-in-out
+         .popup-box
+            animation: moveUp 0.25s ease-in-out
+            &.active
+               opacity: 0
+               animation: moveDown 0.25s ease-in-out
+      &.active2
+         display: flex
+         animation: fadeOut1 0.25s ease-in-out
+         opacity: 0
+
+@media only screen and (max-width: 1300px)
+   .services-section
+      .category-list
+         padding-left: 50px
+
+@media only screen and (max-width: 1199px)
+   .services-section
+      margin-top: $ultraSpaceMd
+      padding-top: $exlgSpaceMd
+      padding-bottom: $exlgSpaceMd - 15
+      .heading
+         margin-bottom: $halfSpaceMd
+      .category-box
+         .box-container
+            .box
+               margin: 0px 8px 15px 8px
+               min-height: 330px
+               &.active2
+                  .box-content .hover-content .inner-hover
+                     flex: 0 0 282.33px
+                     width: 282.33px
+
+@media only screen and (max-width: 991px)
+   .services-section
+      padding-top: $halfSpaceMd
+      padding-bottom: $halfSpaceMd - 15
+      margin-top: $ultraSpaceSm
+      .heading
+         margin-bottom: $lgSpaceMd
+      .category-container
+         margin-bottom: 35px
+      .category-list
+         padding-left: 0px
+      .category-box
+         .box-container
+            .box
+               &.active2
+                  .box-content .hover-content .inner-hover
+                     flex: 0 0 336.5px
+                     width: 336.5px
+
+@media only screen and (max-width: 850px)
+   .services-section
+      .category-list
+         padding-left: 35px
+      .category-box
+         .box-container
+            .box
+               &.active2
+                  .box-content .hover-content .inner-hover
+                     flex: 0 0 319px
+                     width: 319px
+
+@media only screen and (max-width: 767px)
+   .services-section
+      margin-top: $ultraSpaceXsm
+      padding-bottom: $halfSpaceMd - 25
+      .heading
+         margin-bottom: 40px
+      .category-list
+         padding-left: 15px
+      .category-box
+         .box-container
+            .box
+               max-width: 350px
+               min-height: 350px
+               margin: 0 auto 25px auto
+               .box-content 
+                  p.title
+                     font-size: 18px
+                  p.price
+                     font-size: 15px
+                  .box-btn
+                     margin-top: 25px
+               &.active2
+                  .box-content .hover-content .inner-hover
+                     flex: 0 0 350px
+                     width: 350px
+      .category-container
+         .category-box
+            .inner-category
+               .category
+                  padding: 10px
+                  .category-item
+                     .txt
+                        font-size: $bodyFontSizeXsm
+                     .icon
+                        background-size: 210px
+                        width: 35px
+                        height: 33px
+                        margin-right: 4.5px
+                  &:nth-child(2)
+                     .icon
+                        width: 34px
+                        height: 29px
+                        background-position: -70px 0
+                  &:nth-child(1)
+                     .icon
+                        background-position: -140px 0px
+                        height: 31px
+                  &:nth-child(1).active
+                     .category-item
+                        .icon.active
+                           background-position: -174px 0px
+                  &:nth-child(2).active
+                     .category-item
+                        .icon.active
+                           background-position: -105px 0px
+                  &:nth-child(3).active
+                     .category-item
+                        .icon.active
+                           background-position: -35px 0px
+
+@media only screen and (max-width: 570px)
+   .services-section
+      .category-overlay
+         display: none
+      .category-container
+         .category-box
+            .inner-category
+               background-color: transparent
+               box-shadow: none
+               flex-wrap: wrap
+               overflow: inherit
+               border-radius: 0px
+               .category
+                  background-color: $lightTxtColor
+                  border-radius: 35px
+                  padding: 10px 15px
+                  &.active
+                     background-color: $highlightColor
+                  &:not(:last-child)
+                     margin-right: 10px
+                     margin-bottom: 10px
+                  .category-item
+                     .txt
+                        padding-top: 1px
+      .popup-container
+         .popup-box
+            max-width: 88%
+         
+@media only screen and (max-width: 400px)
+   .services-section
+      .category-box
+         .box-container
+            .box
+               max-width: 300px
+               min-height: 310px
+               &.active2
+                  .box-content
+                     .hover-content
+                        .inner-hover
+                           flex: 0 0 300px
+                           width: 300px
+
+@media only screen and (max-width: 350px)
+   .services-section
+      .category-box
+         .box-container
+            .box
+               max-width: 250px
+               min-height: 270px
+               &.active2
+                  .box-content
+                     .hover-content
+                        .inner-hover
+                           flex: 0 0 250px
+                           width: 250px
+      .popup-container 
+         .close-popup-btn
+            right: 0
+         .popup-box 
+            .popup-content
+               padding: 0 15px
+
+
+/*** Team Section ***/
+
+.team-section
+   h3
+      margin-bottom: $lgSpace
+   .pic
+      max-width: 230px
+      margin: 0 auto 25px auto
+   .title
+      margin-top: 0px
+      font-size: 20px
+      margin-bottom: 35px
+   .type
+      font-family: $medFont
+      color: $mainColor
+      font-size: 14px
+      margin-bottom: 5px
+   .logo
+      width: 160px
+      margin: 30px auto 0 auto
+
+@media only screen and (max-width: 1300px)
+   .team-section
+      .container > .row
+         padding-left: 50px
+
+@media only screen and (max-width: 1199px)
+   .team-section
+      h3
+         margin-bottom: $halfSpaceMd
+
+@media only screen and (max-width: 991px)
+   .team-section
+      h3
+         margin-bottom: $lgSpaceMd
+      .container > .row
+         padding-left: 0px
+      p.title
+         font-size: 18px
+
+@media only screen and (max-width: 850px)
+   .team-section
+      .container > .row
+         padding-left: 35px
+
+@media only screen and (max-width: 767px)
+   .team-section
+      .container > .row
+         padding-left: 0px
+      h3
+         margin-bottom: 40px
+         br
+            display: none
+      .pic
+         max-width: 215px
+         margin-bottom: 20px
+      .logo
+         margin: 15px auto
+
+/*** Clients section ***/
+
+.clients-section
+   margin-top: $ultraSpace - 35
+   padding-top: 0px
+   overflow: hidden
+   z-index: 99
+   padding: $halfSpace 0
+   padding-bottom: $halfSpace - 35
+   background-color: $lightBgColor
+   h3
+      margin-bottom: 40px
+   .stars
+      margin-bottom: $mdSpace
+      .star
+         color: $mainColor
+         &:not(:last-child)
+            margin-right: 8px
+   .title
+      font-size: 20px
+   .pic
+      padding: 0 25px 50px 25px
+
+@media only screen and (max-width: 1199px)
+   .clients-section
+      margin-top: $ultraSpaceMd - 35
+      padding: $exlgSpaceMd 0
+      padding-bottom: $exlgSpaceMd - 10
+      .pic
+         padding: 0 15px 50px 15px
+
+@media only screen and (max-width: 991px)
+   .clients-section
+      margin-top: $ultraSpaceSm - 35
+      padding: $halfSpaceMd 0
+      padding-bottom: $halfSpaceMd - 20
+      .pic
+         padding: 0 20px 50px 20px
+      .title
+         font-size: 18px
+
+@media only screen and (max-width: 767px)
+   .clients-section
+      margin-top: $ultraSpaceXsm - 35
+      padding-bottom: $halfSpaceMd - 50
+      .container > .row
+         text-align: center
+      .stars
+         justify-content: center
+      .pic-content
+         padding-top: 40px
+
+
+/*** Talk Section ***/
+
+.talk-section
+   padding-top: $halfSpace
+   padding-bottom: 0
+   background-color: $lightMainColor
+   background-size: cover
+   background-repeat: no-repeat
+   background-position: center center
+   background-image: $talkBg
+   background-attachment: fixed
+   z-index: 9
+   .talk-bg
+      top: 0
+      left: 0
+      background-color: $mainColor
+      opacity: 0.85
+   h3
+      color: $lightTxtColor
+   .copyrights
+      margin-top: 10px
+      margin-bottom: 15px
+      p
+         color: $lightTxtColor
+         font-size: 13px
+         a
+            color: $lightTxtColor
+            font-family: $medFont
+            text-decoration: none
+   .icons
+      margin-top: 25px
+      text-align: right
+   .up-btn
+      padding: 0 0 2px 0
+      width: 45px
+      height: 40px
+      margin-left: auto
+      font-size: 27px
+      background-color: transparent
+      box-shadow: none
+      border: 2px solid rgba(255, 255, 255, 0.3)
+      margin-bottom: 15px
+      transition: $tran
+      &:hover
+         background-color: rgba(255, 255, 255, 0.17)
+   .social-icon
+      justify-content: flex-end
+      .icon-item
+         width: 35px
+         height: 35px
+         padding-top: 1px
+         border-radius: 100%
+         border: 2px solid rgba(255, 255, 255, 0.3)
+         margin: 0 auto 10px auto
+         transition: $tran
+         a
+            height: 31px
+            color: $lightTxtColor
+            font-size: 14px
+            text-decoration: none
+         &:hover
+            background-color: rgba(255, 255, 255, 0.17)
+         &:not(:last-child)
+            margin-right: 15px
+      
+@media only screen and (max-width: 991px)
+   .talk-section
+      padding-top: $halfSpaceMd
+
+@media only screen and (max-width: 500px)
+   .talk-section
+      .icons
+         text-align: center
+      .up-btn
+         margin-right: auto
+
+
+/*** Loader ***/
+.loader-container
+   @extend %full-fixed
+   display: flex
+   justify-content: center
+   align-items: center
+   .loader
+      width: 50px
+      height: 50px
+      border-radius: 50%
+      margin: 0
+      display: inline-block
+      vertical-align: middle
+      z-index: 99
+      &::before, &::after
+         content: ''
+         width: 100%
+         height: 100%
+         border-radius: 50%
+         position: absolute
+         top: 0
+         left: 0
+         background-color: $mainColor
+         transform: scale(0)
+         animation: loader 1.2s infinite ease-in-out
+      &::after
+         animation-delay: 0.6s
+   .tail
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 20%
+      background-color: $lightTxtColor
+      transition: width 0.7s ease
+      @for $i from 0 through 5
+         &:nth-child(#{$i})
+            top: calc(#{$i - 1} * 20%)
+            transition-delay: #{($i - 1) * 0.2s}
+   &.active
+      .loader
+         opacity: 0
+         animation: fadeOut1 0.3s ease-in-out
+   &.active2
+      .tail
+         width: 0%
+
+
+/*** Tecnology Section ***/
+
+.technology-section
+   .txt-content
+      margin-top: $bgSpace
+   .techno-box
+      margin-bottom: 25px
+      .box
+         display: flex
+         justify-content: center
+         align-items: center
+         padding: 15px
+         text-align: center
+         box-shadow: 0px 0px 14px 0px rgba(0,0,0,.2)
+         height: 100%
+         max-width: 80%
+         margin: 0 auto
+         min-height: 100px
+         .pic
+            max-width: 80px
+            margin: 0 auto
+         &.med-size
+            .pic
+               max-width: 65px
+         &.small-size
+            .pic
+               max-width: 50px
+         p
+            margin-bottom: 0px
+            font-family: $boldFont
+            color: $headingColor
+   .description
+      .title
+         margin-bottom: $mdSpace
+
+@media only screen and (max-width: 767px)
+   .technology-section
+      .txt-content
+         margin-bottom: 40px
+         margin-top: 0px
+      .techno-box
+         .box
+            max-width: 180px
+            min-height: 120px
+         &:nth-child(odd)
+            .box
+               margin-right: 12.5px
+         &:nth-child(even)
+            .box
+               margin-left: 12.5px
+
+
+/*** Reviews Section ***
+
+.reviews-section
+   padding-bottom: $halfSpace
+   &::before
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 100%
+      height: calc(100% - 290px)
+      background-color: $lightBgColor
+   .box
+      background-color: $lightTxtColor
+      padding: 25px
+      box-shadow: 0px 4px 15px 0px rgba(0,0,0,.07)
+      .row-box
+         align-items: center
+         padding-bottom: 30px
+         margin-bottom: 30px
+         border-bottom: 1px solid $borderColor
+         .icon
+            width: 75px
+            flex: 0 0 75px
+            margin-right: 20px
+         p
+            font-family: $medFont
+            color: $headingColor
+            margin-bottom: 0px
+         &:last-child
+            border-bottom: none
+   .left-content .content
+      padding-right: 0px
+   .right-content
+      .heading
+         margin: 30px 0 50px 0
+      .clients-reviews
+         padding-top: $halfSpace
+      .stars
+         margin-bottom: $mdSpace
+         color: $mainColor
+         .star:not(:last-child)
+            margin-right: 5px
+      .review-txt
+         margin-bottom: $mdSpace
+      .title
+         margin-bottom: 10px
+         & + p
+            font-size: 15px
+      .rev-content
+         padding: 0 15px
+      .owl-dots
+         text-align: center
+         width: 100%
+         display: flex
+         justify-content: center
+         padding-top: 50px
+         .owl-dot
+            box-shadow: none
+            outline: none
+            border: none
+            background-color: #cacaca
+            width: 12px
+            height: 12px
+            padding: 0
+            margin-right: 10px
+            &.active
+               background-color: $mainColor
+
+@media only screen and (max-width: 1199px)
+   .reviews-section
+      padding-bottom: $halfSpace - 5px
+      &::before
+         height: calc(100% - 229px)
+      .box
+         padding: 20px
+         .row-box
+            .icon
+               width: 55px
+               flex: 0 0 55px
+               margin-right: 15px
+      .right-content
+         .clients-reviews
+            padding-top: 50px
+
+@media only screen and (max-width: 991px)
+   .reviews-section
+      padding-bottom: $halfSpaceMd
+      &::before
+        height: calc(100% - 210px) 
+      .right-content
+         .clients-reviews
+            padding-top: 58px
+         .dots-container
+            padding-top: 40px
+
+@media only screen and (max-width: 850px)
+   .reviews-section
+      &::before
+         height: calc(100% - 195px)
+      .left-content
+         flex: 0 0 45%
+         width: 45%
+         max-width: 45%
+      .right-content
+         flex: 0 0 55%
+         width: 55%
+         max-width: 55%
+         .clients-reviews, .owl-dots
+            padding-top: 40px
+
+@media only screen and (max-width: 767px)
+   .reviews-section
+      &::before
+         height: calc(100% - 180px)
+
+@media only screen and (max-width: 575px)
+   .reviews-section
+      .left-content
+         width: 100%
+         flex: 0 0 100%
+         max-width: 100%
+      .right-content
+         width: 100%
+         flex: 0 0 100%
+         max-width: 100%
+         .heading
+            text-align: center
+            margin: 30px 0 0 0
+            h3
+               margin-bottom: 0px
+      .box
+         padding-bottom: 0px
+
+/*** Animation ***/
+@keyframes widthSlide
+   0%
+      width: 0%
+   100%
+      width: 100%
+@keyframes widthSlide2
+   0%
+      width: 100%
+   100%
+      width: 0%
+@keyframes heightSlide
+   0%
+      height: 0%
+   100%
+      height: 100%
+@keyframes heightSlide2
+   0%
+      height: 100%
+   100%
+      height: 0%
+@keyframes fadeOut1
+   0%
+      opacity: 1
+   100%
+      opacity: 0
+@keyframes fadeIn1
+   0%
+      opacity: 0
+   100%
+      opacity: 1
+@keyframes moveUp
+   0%
+      opacity: 0
+      top: 45px
+   100%
+      opacity: 1
+      top: 0px
+@keyframes moveDown
+   0%
+      opacity: 1
+      top: 0px
+   100%
+      opacity: 0
+      top: 45px
+@keyframes loader
+   0%   
+      transform: translateX(-100%) scale(0)
+   50%  
+      transform: translateX(0%)    scale(1)
+   100% 
+      transform: translateX(100%)  scale(0)
