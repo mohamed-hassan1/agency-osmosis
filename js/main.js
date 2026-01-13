@@ -276,8 +276,8 @@ const globalObj = {
       }, 300);
    },
    checkAllImg: function() { // Check if all images loaded
-      if (document.querySelector('img')) {
-         let images = document.querySelectorAll('img'),
+      if (document.querySelector('.header-section img')) {
+         let images = document.querySelectorAll('.header-section img'),
             list = Array.from([...images]),
             counter = 0,
             status = false;
